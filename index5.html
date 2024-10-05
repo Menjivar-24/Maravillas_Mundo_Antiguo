@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>La estatua de olimpia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Description" lang="en" content="open source html and css template">
+<meta name="author" content="mlp design">
+<meta name="robots" content="index, follow">
+</head>
+<body>
+    <style>  
+    @import url(http://fonts.googleapis.com/css?family=Mako);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+html, body {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+body {
+	background-color: #ffffff;
+	color: #555;
+	font: normal 16px/150% 'Mako', sans-serif;
+	/*font-family: 'Mako', sans-serif;
+	font-size: 16px;
+	font-weight: normal;*/
+	margin: 0;
+}
+a {
+	text-decoration: none;
+	color: #c46d0bc9;
+	border-bottom: 1px dotted;
+}
+a:hover {
+	border-bottom: 1px solid;
+}
+h1, h2 {
+	margin-bottom: 0;
+}
+blockquote {
+	color: #777;
+	display: block;
+	padding: 15px 20px;
+	width: 80%;
+	position: relative;
+	border-left: 15px solid #c46d0bc9;
+	border-right: 2px solid #c46d0bc9;
+	-moz-box-shadow: 2px 2px 15px #c46d0bc9;
+	-webkit-box-shadow: 2px 2px 15px #c46d0bc9;
+	box-shadow: 2px 2px 15px #c46d0bc9;
+	margin: 0 auto;
+}
+.two-col-cell {
+	display: table-cell;
+	float: left;
+	width: calc(100% / 2);
+}
+.three-col-cell {
+	display: table-cell;
+	float: left;
+	width: calc((100% / 3) - 6px);
+}
+.sub {
+	font-size: 95%;
+	padding: 3px 0;
+	margin: 0;
+}
+.clear {
+	clear: both;
+}
+.gallery {
+	
+	text-align: center;
+	padding: 10px 0;
+	margin: 1px;
+}
+.gallery img {
+	width: 90%;
+}
+ul#menu {
+	width: 200px;
+	position: absolute; /*change to 'fixed' for sticky menu */
+	top: 0;
+	left: 2%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	z-index: 1000;
+	/*border:5px solid #808;*/
+}
+ul#menu li {
+	border-top: 1px solid #c46d0bc9;
+	border-bottom: 1px solid #c46d0bc9;
+}
+ul#menu li a {
+	font-size: 85%;
+	text-decoration: none;
+	color: #ccc;
+	padding: 10.5px 11px;
+	background-color: #c46d0bc9;
+	display: block;
+	border: none !important;
+}
+ul#menu li a:hover, ul#menu li a.active {
+	background-color: #c46d0bc9;
+	color: #c46d0bc9;
+	border: none !important;
+}
+#banner {
+	display: table;
+	width: 100%;
+	height: 150px;
+	background-color: #c46d0bc9;
+	color: #ffffff;
+	margin-top: 10px;
+}
+#header {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: calc(200px + 2% + 2%);
+}
+#content {
+	display: table;
+	width: calc(100% - (200px + (2% * 2)));
+	margin: 0;
+	margin-left: calc(200px + 2%);
+	margin-bottom: 15px;
+}
+.pageitem {
+	width: 97%;
+	margin-left: 2%;
+	margin-bottom: 15px;
+	float: left;
+}
+.pageitem p {
+	text-align: justify;
+}
+.pageitem ul li {
+	padding: 10;
+	margin: 10;
+	list-style: none;
+}
+.pageitem ul li:before {
+	content: '\f061';
+	font-family: 'FontAwesome';
+	float: left;
+	margin-left: -1.5em;
+	color: #c46d0bc9;
+}
+.pageitem ol li {
+	counter-increment: list;
+	list-style: none;
+}
+.pageitem ol li:before {
+	color: #c46d0bc9;
+	content: counter(list) ".";
+	text-align: right;
+	position: absolute;
+	left: calc(200px + 2% + 2%);
+	width: 30px;
+}
+#footer {
+	border-top: 2px solid #c46d0bc9;
+	text-align: right;
+	padding: 15px;
+	font-size: 75%;
+	line-height: 70%;
+	clear: both;
+}
+#show-menu {
+	display: none;
+}
+.open, .close {
+	background-color: inherit;
+	color: #fff;
+	text-align: right;
+	font-weight: normal;
+	font-size: 1.5em;
+	padding: 0;
+	position: absolute;
+	top: 135px;
+	left: 4%;
+	display: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1000px) {
+	.three-col-cell {
+		width: calc((100% / 2) - 6px);
+	}
+}
+@media screen and (max-width: 750px) {
+	#content {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		width: calc(100% - (2% * 2));
+	}
+	#header {
+		padding-left: 4%;
+	}
+	.pageitem ol li:before {
+		left: calc(2% + 2%);
+	}
+	/* menu */
+	ul#menu {
+		display: none;
+	}
+	.hide, .open {
+		display: block;
+	}
+	#show-menu:checked ~ .open {
+		display: none;
+	}
+	#show-menu:checked ~ .close {
+		font-size: 1.6em;
+		display: block;
+	}
+	#show-menu:checked ~ ul#menu {
+		display: initial;
+		width: 100%;
+		text-align:center;
+		position: absolute;
+		top: calc(18px + 150px);
+		right: 0;
+		left: auto;
+		opacity: 0.95;
+    filter: alpha(opacity=95); /* For IE8 and earlier */
+	}
+}
+@media screen and (max-width: 650px) {
+	.three-col-cell {
+		width: calc(100% / 1);
+	}
+	.two-col-cell {
+		width: calc(100% / 1);
+	}
+	.gallery img {
+		width: 700%;
+	}
+	#footer {
+		text-align: center;
+	}
+}
+
+    
+    </style>
+<!-- Banner -->
+<div id="banner">
+    <div id="header">
+    <h1>LAS SIETE MARAVILLAS DEL MUNDO</h1>
+    </div>
+</div>
+
+
+
+<!-- // -->
+<div id="content">
+    <!-- Page Items -->
+    <div class="pageitem">
+    <br>
+    <blockquote><h3>LISTADO DE LAS MARAVILLAS DEL MUNDO</h3>
+    <ol>
+        <ul><a href="index2.html">La gran piramide de guiza</a></ul>
+        <ul><a href="index3.html">Los Jardines Colgantes de Babilonia</a></ul>
+        <ul><a href="index4.html">El Templo de Artemisa en Éfeso    </a></ul>
+        <ul><a href="index5.html">La Estatua de Zeus en Olimpia    </a></ul>
+        <ul><a href="index6.html">El Mausoleo de Halicarnaso     </a></ul>
+        <ul><a href="index7.html">El Coloso de Rodas    </a></ul>
+        <ul><a href="index8.html">El Faro de Alejandría     </a></ul>
+    </ol></blockquote>
+    <br>
+    <hr>
+    <br>
+    <h2>LAS MARAVILLAS DEL MUNDO ANTIGUO</h2>
+    <br>
+    <blockquote>Las 7 Maravillas del Mundo Antiguo eran un conjunto de obras arquitectónicas y escultóricas que los autores griegos, especialmente los del período helenístico, consideraban dignas de admiración por su belleza, tamaño y complejidad técnica. Estas maravillas se encontraban dispersas por todo el mundo mediterráneo y representaban la cúspide de la ingeniería y la creatividad humana de la época</blockquote>
+    <br>
+    
+
+    <div class="pageitem">
+    <br>
+    <div class="two-col-cell">
+    <h3>La Estatua de Zeus en Olimpia</h3>
+    <ol>
+    <p>En la región de Élide, en el noroeste del Peloponeso, donde se encuentra el valle del río Alfeo, los antiguos griegos erigieron un santuario ofrecido a Zeus. Eligieron este santuario como sede de los Juegos Olímpicos, que se realizaban cada cuatro años en honor a este dios, con participantes de todos los puntos de la Hélade. Tan sagrados y puntuales eran estos juegos, que se sabe de guerras entre ciudades griegas que se detuvieron por este motivo. Todas las ciudades griegas enviaban a sus mejores representantes, debido a la jerarquía que representaba ser ganador de una de las disciplinas. Adquirieron tal popularidad, que al período de cuatro años que separaba a un juego del otro, llamado Olimpíada, se le empleó como modo de cómputo de tiempo, sobre todo en la literatura a partir de la utilización por parte del historiador Timeo alrededor del 300 a.n.e.</p>
+<p>Muchas veces se habla, en forma errónea de la ciudad de Olimpia, cuando en realidad se trataba de un santuario, compuesto sólo de edificaciones destinadas a la adoración a los dioses y a los juegos.</p>
+<p>El arquitecto Libón construyó el templo en piedra caliza local, de baja calidad estética, por lo que debió dar un estucado superficial que simulaba mármol. Los frisos estaban tallados y los frontones tenían esculturas en mármol. Uno de los dos temas principales de la decoración del templo es la justicia, de la cual Zeus es defensor en la mitología griega. El otro tema, son los doce trabajos de Hércules. En el interior del templo se encendía la llama olímpica al comienzo de los juegos y, tal como en los juegos olímpicos modernos, permanecía encendida hasta el final de los juegos.</p>
+</ol>
+    </div>
+    <div class="two-col-cell">
+    <h3></h3>
+    <br>
+    <br>
+    <ul>
+    <img src="IMG/Zeus.jpg" alt="Ejemplo de Imagen" width="450" height="210">
+    <br>
+    <p>La construcción del templo se estaba terminando hacia el 450 a. n. e., contando en sus frontones y metopas con grupos escultóricos de tal calidad que se consideraron la mejor representación del arte griego en su época. El cuerpo estaba tallado en marfil y las ropas y joyas eran de oro. A sus pies se coronaba a los vencedores tratándolos como a auténticos héroes.</p>
+<p>Según la leyenda, cuando Fidias terminó su obra pidió al dios una señal de su conformidad con el trabajo realizado, y entonces del cielo despejado llegó un rayo hasta los pies del escultor.</p>
+<p>Si bien el final de la estatua es motivo de discusión, el rastro de la misma se pierde en el siglo V de nuestra era, cuando durante el reinado del emperador Teodosio II, fanáticos cristianos incendian el templo. Hay quienes sostienen que la estatua fue destruida en el incendio, otros afirman que sobrevivió y que fue rescatada por un coleccionista de Constantinopla, mientras que otros dicen que la estatua fue destruida en los terremotos que pusieron fin al templo en el siglo VI.
+
+</p>
+</ul>
+    </div>
+    </div>
+    <p></p>
+    
+<br>
+<hr>
+</body>
+</html>

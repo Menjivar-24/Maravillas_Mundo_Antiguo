@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>El Mausoleo de Halicarnaso</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Description" lang="en" content="open source html and css template">
+<meta name="author" content="mlp design">
+<meta name="robots" content="index, follow">
+</head>
+<body>
+    <style>  
+    @import url(http://fonts.googleapis.com/css?family=Mako);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+html, body {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+body {
+	background-color: #ffffff;
+	color: #555;
+	font: normal 16px/150% 'Mako', sans-serif;
+	/*font-family: 'Mako', sans-serif;
+	font-size: 16px;
+	font-weight: normal;*/
+	margin: 0;
+}
+a {
+	text-decoration: none;
+	color: #c46d0bc9;
+	border-bottom: 1px dotted;
+}
+a:hover {
+	border-bottom: 1px solid;
+}
+h1, h2 {
+	margin-bottom: 0;
+}
+blockquote {
+	color: #777;
+	display: block;
+	padding: 15px 20px;
+	width: 80%;
+	position: relative;
+	border-left: 15px solid #c46d0bc9;
+	border-right: 2px solid #c46d0bc9;
+	-moz-box-shadow: 2px 2px 15px #c46d0bc9;
+	-webkit-box-shadow: 2px 2px 15px #c46d0bc9;
+	box-shadow: 2px 2px 15px #c46d0bc9;
+	margin: 0 auto;
+}
+.two-col-cell {
+	display: table-cell;
+	float: left;
+	width: calc(100% / 2);
+}
+.three-col-cell {
+	display: table-cell;
+	float: left;
+	width: calc((100% / 3) - 6px);
+}
+.sub {
+	font-size: 95%;
+	padding: 3px 0;
+	margin: 0;
+}
+.clear {
+	clear: both;
+}
+.gallery {
+	
+	text-align: center;
+	padding: 10px 0;
+	margin: 1px;
+}
+.gallery img {
+	width: 90%;
+}
+ul#menu {
+	width: 200px;
+	position: absolute; /*change to 'fixed' for sticky menu */
+	top: 0;
+	left: 2%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	z-index: 1000;
+	/*border:5px solid #808;*/
+}
+ul#menu li {
+	border-top: 1px solid #c46d0bc9;
+	border-bottom: 1px solid #c46d0bc9;
+}
+ul#menu li a {
+	font-size: 85%;
+	text-decoration: none;
+	color: #ccc;
+	padding: 10.5px 11px;
+	background-color: #c46d0bc9;
+	display: block;
+	border: none !important;
+}
+ul#menu li a:hover, ul#menu li a.active {
+	background-color: #c46d0bc9;
+	color: #c46d0bc9;
+	border: none !important;
+}
+#banner {
+	display: table;
+	width: 100%;
+	height: 150px;
+	background-color: #c46d0bc9;
+	color: #ffffff;
+	margin-top: 10px;
+}
+#header {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: calc(200px + 2% + 2%);
+}
+#content {
+	display: table;
+	width: calc(100% - (200px + (2% * 2)));
+	margin: 0;
+	margin-left: calc(200px + 2%);
+	margin-bottom: 15px;
+}
+.pageitem {
+	width: 97%;
+	margin-left: 2%;
+	margin-bottom: 15px;
+	float: left;
+}
+.pageitem p {
+	text-align: justify;
+}
+.pageitem ul li {
+	padding: 10;
+	margin: 10;
+	list-style: none;
+}
+.pageitem ul li:before {
+	content: '\f061';
+	font-family: 'FontAwesome';
+	float: left;
+	margin-left: -1.5em;
+	color: #c46d0bc9;
+}
+.pageitem ol li {
+	counter-increment: list;
+	list-style: none;
+}
+.pageitem ol li:before {
+	color: #c46d0bc9;
+	content: counter(list) ".";
+	text-align: right;
+	position: absolute;
+	left: calc(200px + 2% + 2%);
+	width: 30px;
+}
+#footer {
+	border-top: 2px solid #c46d0bc9;
+	text-align: right;
+	padding: 15px;
+	font-size: 75%;
+	line-height: 70%;
+	clear: both;
+}
+#show-menu {
+	display: none;
+}
+.open, .close {
+	background-color: inherit;
+	color: #fff;
+	text-align: right;
+	font-weight: normal;
+	font-size: 1.5em;
+	padding: 0;
+	position: absolute;
+	top: 135px;
+	left: 4%;
+	display: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1000px) {
+	.three-col-cell {
+		width: calc((100% / 2) - 6px);
+	}
+}
+@media screen and (max-width: 750px) {
+	#content {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		width: calc(100% - (2% * 2));
+	}
+	#header {
+		padding-left: 4%;
+	}
+	.pageitem ol li:before {
+		left: calc(2% + 2%);
+	}
+	/* menu */
+	ul#menu {
+		display: none;
+	}
+	.hide, .open {
+		display: block;
+	}
+	#show-menu:checked ~ .open {
+		display: none;
+	}
+	#show-menu:checked ~ .close {
+		font-size: 1.6em;
+		display: block;
+	}
+	#show-menu:checked ~ ul#menu {
+		display: initial;
+		width: 100%;
+		text-align:center;
+		position: absolute;
+		top: calc(18px + 150px);
+		right: 0;
+		left: auto;
+		opacity: 0.95;
+    filter: alpha(opacity=95); /* For IE8 and earlier */
+	}
+}
+@media screen and (max-width: 650px) {
+	.three-col-cell {
+		width: calc(100% / 1);
+	}
+	.two-col-cell {
+		width: calc(100% / 1);
+	}
+	.gallery img {
+		width: 700%;
+	}
+	#footer {
+		text-align: center;
+	}
+}
+
+    
+    </style>
+<!-- Banner -->
+<div id="banner">
+    <div id="header">
+    <h1>LAS SIETE MARAVILLAS DEL MUNDO</h1>
+    </div>
+</div>
+
+
+
+<!-- // -->
+<div id="content">
+    <!-- Page Items -->
+    <div class="pageitem">
+    <br>
+    <blockquote><h3>LISTADO DE LAS MARAVILLAS DEL MUNDO</h3>
+    <ol>
+        <ul><a href="index2.html">La gran piramide de guiza</a></ul>
+        <ul><a href="index3.html">Los Jardines Colgantes de Babilonia</a></ul>
+        <ul><a href="index4.html">El Templo de Artemisa en Éfeso    </a></ul>
+        <ul><a href="index5.html">La Estatua de Zeus en Olimpia    </a></ul>
+        <ul><a href="index6.html">El Mausoleo de Halicarnaso     </a></ul>
+        <ul><a href="index7.html">El Coloso de Rodas    </a></ul>
+        <ul><a href="index8.html">El Faro de Alejandría     </a></ul>
+    </ol></blockquote>
+    <br>
+    <hr>
+    <br>
+    <h2>LAS MARAVILLAS DEL MUNDO ANTIGUO</h2>
+    <br>
+    <blockquote>Las 7 Maravillas del Mundo Antiguo eran un conjunto de obras arquitectónicas y escultóricas que los autores griegos, especialmente los del período helenístico, consideraban dignas de admiración por su belleza, tamaño y complejidad técnica. Estas maravillas se encontraban dispersas por todo el mundo mediterráneo y representaban la cúspide de la ingeniería y la creatividad humana de la época</blockquote>
+    <br>
+    
+
+    <div class="pageitem">
+    <br>
+    <div class="two-col-cell">
+    <h3>El Mausoleo de Halicarnaso</h3>
+    <ol>
+    <p>El Mausoleo de Halicarnaso (Bodrum, Turquía) fue una enorme tumba construida para Mausolo, el gobernante de Caria, hacia el año 350 a.C. La estructura de mármol era tan inmensa y estaba decorada con un conjunto de esculturas tan llamativo que se incluyó en la lista de las Siete Maravillas del Mundo Antiguo y, a partir de entonces, dio nombre a cualquier monumento funerario de gran tamaño: un mausoleo. Tras un dañino terremoto, y con muchos elementos canibalizados para el castillo de Bodrum del siglo XV, el mausoleo ya no sobrevive. Sí se conservan fragmentos del podio y de las columnas, mientras que algunas piezas importantes de la escultura decorativa del mausoleo se pueden ver hoy en el Museo Británico de Londres.</p>
+<p>Mausolo (Mausolos o Mausollos) fue un sátrapa de Persia que gobernó de forma semi-independiente en Caria, en el actual suroeste de Turquía, desde el año 377 a.C., y Halicarnaso (o Halikarnassos) fue elegida como su capital hacia el año 370 a.C. Halicarnaso ya era una próspera ciudad antigua, famosa por ser el lugar de nacimiento del célebre historiador del siglo V a.C. Heródoto y con una historia que se remonta a la Edad de Bronce. Mausolo engrandeció aún más la ciudad, agregó muchos edificios de calidad, como un nuevo puerto, un palacio y varios templos. Caria prosperó gracias al control de Mausolo y al desarrollo de las ciudades costeras, que pudieron aprovechar mejor el comercio del Mediterráneo oriental, especialmente con Rodas. La construcción por parte del gobernante de una mejor red de carreteras para conectar los lugares del interior mejoró aún más la prosperidad de la región y los ingresos fiscales llegaron a raudales a la capital..</p>
+</ol>
+    </div>
+    <div class="two-col-cell">
+    <h3></h3>
+    <br>
+    <br>
+    <ul>
+    <img src="IMG/Mausoleo.jpg" alt="Ejemplo de Imagen" width="450" height="210">
+    <br>
+    <p>Las riquezas acumuladas en las arcas reales de Caria se gastarían en uno de los proyectos de construcción personal más lujosos jamás vistos en el mundo antiguo. Cuando Mausolos murió hacia el año 353 a.C., su cuerpo fue enterrado en lo que se conoció como el Maussolleion o Mausoleo de Halicarnaso. La tumba, que el gobernante proyectó para sí mismo y sus descendientes desde el año 367 a.C., fue terminada por su hermana-esposa Artemisia. Probablemente se terminó hacia el año 350 a.C., aunque la propia Artemisia murió el año anterior. Se la enterró junto con su marido y las siguientes generaciones de su familia. Concebido como un monumento sagrado para la ciudad y la dinastía gobernante, estaba situado en un gran recinto en pleno centro de la ciudad y conectado con el ágora por una gran escalera monumental</p>
+</ul>
+    </div>
+    </div>
+    
+<br>
+<hr>
+</body>
+</html>
